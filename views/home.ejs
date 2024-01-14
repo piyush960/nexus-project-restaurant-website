@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+<body> 
+ 
+    <%- include('./partials/header') %>
+
+    <section class="showcase" id="home">
+        <div class="text-content">
+            <h5>Most Ordered Food in Rainy Season</h5>
+            <h2>Jumbo Burger</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia assumenda exercitationem quas beatae labore animi officiis facere velit vel asperiores!</p>        
+            <a href="#booking"><button class="btn" >Order Now</button></a>
+            <a href="#dishes"><button class="btn btn-ghost">Explore More</button></a>
+        </div>
+        <div class="showcase-image">
+            <img src="img/main_img.png" alt="">
+            <div class="shadow"></div>
+        </div>
+        
+    </section>
+
+    <section class="dishes-area" id="dishes">
+        <h2>Our <span>Dishes</span></h2>
+        <div class="dish-cards">
+            <div class="dish-card">
+                <img src="img/biryani.webp" alt="" class="dish-image">
+                    <h3>Biryani</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, repudiandae!</p>
+                    <div class="price">
+                        <small class="">$25.00</small>
+                        <button class="btn btn-card in-home">Buy Now</button>
+                    </div>
+                </div>
+            <div class="dish-card">
+                <img src="img/biryani.webp" alt="" class="dish-image">
+                    <h3>Biryani</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, repudiandae!</p>
+                    <div class="price">
+                        <small class="">$25.00</small>
+                        <button class="btn btn-card in-home">Buy Now</button>
+                    </div>
+            </div>
+            <div class="dish-card">
+                <img src="img/biryani.webp" alt="" class="dish-image">
+                    <h3>Biryani</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, repudiandae!</p>
+                    <div class="price">
+                        <small class="">$25.00</small>
+                        <button class="btn btn-card in-home">Buy Now</button>
+                    </div>
+            </div>
+            <div class="dish-card">
+                <img src="img/biryani.webp" alt="" class="dish-image">
+                    <h3>Biryani</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, repudiandae!</p>
+                    <div class="price">
+                        <small class="">$25.00</small>
+                        <button class="btn btn-card in-home">Buy Now</button>
+                    </div>
+            </div>
+        </div>
+        <div class="explore-btn">
+            <a href="/dishes">
+                <button class="explore-dishes btn" >See More <i class="fa-solid fa-chevron-right"></i></button>
+            </a>
+        </div>
+        
+    </section>
+
+    <section class="chef-area" id="about">
+        <h2>Our Master <span>Chef's</span></h2>
+        <div class="chef-cards">
+            <div class="chef-card">
+
+                <div class="chef-content">
+                    <img src="img/chef1.png" alt="">
+                </div>
+                <div class="chef-text">
+                    <h3>Ben Cutting</h3>
+                    <small>Age : 29</small>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptates.</p>
+                    <div class="chef-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chef-card">
+                <div class="chef-content">
+                    <img src="img/chef1.png" alt="">
+                </div>
+                <div class="chef-text">
+                    <h3>Ben Cutting</h3>
+                    <small>Age : 29</small>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptates.</p>
+                    <div class="chef-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chef-card">
+                <div class="chef-content">
+                    <img src="img/chef1.png" alt="">
+                </div>
+                <div class="chef-text">
+                    <h3>Ben Cutting</h3>
+                    <small>Age : 29</small>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptates.</p>
+                    <div class="chef-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="explore-btn">
+            <a href="/about">
+                <button class="explore-chef btn">See More <i class="fa-solid fa-chevron-right"></i></button>
+            </a>
+        </div>
+    </section>
+
+    <section class="booking-area" id="booking">
+        <h2>Book A <span>Table</span></h2>
+        <div class="booking-content">
+            <img src="img/order_image.png" alt="">
+            <form action="" class="booking-form">
+                <label for="name"><i class="fa-solid fa-user"></i> <span>Name</span></label>
+                <input type="text" name="name">
+
+                <label for="email"><i class="fa-solid fa-envelope"></i> <span>Email</span></label>
+                <input type="email" name="email">
+
+                <label for="mobile"><i class="fa-solid fa-mobile"></i> <span>Mobile Number</span></label>
+                <input type="text" name="mobile">
+
+                <label for="number"><i class="fa-solid fa-table"></i> <span>Table Number</span></label>
+                <input type="number" name="number">
+
+                <label for="time"><i class="fa-solid fa-clock"></i> <span>Time</span></label>
+                <input type="time" name="time">
+
+                <button class="btn booking-btn">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="reviews-area" id="reviews">
+        <h2>What our <span>Customers</span> say</h2>
+        <div class="swiper mySwiper">
+            <div class="customer-cards swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="customer-card">
+                        <img src="img/review_1.png" alt="">
+                        <div class="customer-text">
+                            <h3>Sam Dsouza</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut deleniti ducimus quasi suscipit officiis qui cum perferendis repellendus cumque quaerat.</p>
+                            <h4>Student</h4>
+                            <div class="ratings">
+                                <i  class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="customer-card">
+                        <img src="img/review_2.png" alt="">
+                        <div class="customer-text">
+                            <h3>Sam Dsouza</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut deleniti ducimus quasi suscipit officiis qui cum perferendis repellendus cumque quaerat.</p>
+                            <h4>Student</h4>
+                            <div class="ratings">
+                                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="customer-card">
+                        <img src="img/review_3.png" alt="">
+                        <div class="customer-text">
+                            <h3>Sam Dsouza</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut deleniti ducimus quasi suscipit officiis qui cum perferendis repellendus cumque quaerat.</p>
+                            <h4>Student</h4>
+                            <div class="ratings">
+                                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="customer-card">
+                        <img src="img/review_4.png" alt="">
+                        <div class="customer-text">
+                            <h3>Sam Dsouza</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut deleniti ducimus quasi suscipit officiis qui cum perferendis repellendus cumque quaerat.</p>
+                            <h4>Student</h4>
+                            <div class="ratings">
+                                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+       
+    </section>
+    
+    <%- include('./partials/footer.ejs') %>
+    
+    <!-- Swiper JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="main.js"></script>
+    <script src="nav.js"></script>
+    <script src="search.js"></script>
+    <script src="swiper.js"></script>
+</body>
+</html>

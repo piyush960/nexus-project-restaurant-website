@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+<body>
+    
+    <%- include('./partials/header') %>
+
+
+    <section class="dishes-area current" id="dishes">
+        <h2>Our <span>Dishes</span></h2>
+        <div class="dish-cards">
+            <% if(data.meals){ %>
+                <% data.meals.forEach( meal => { %>
+                    <div class="dish-card active">
+                        <img src=<%= meal.strMealThumb+'/preview' %> alt="" class="dish-image">
+                        <h3><%= meal.strMeal %></h3>
+                        <div class="">
+                            <p><%= meal.strTags %></p>
+                        </div>
+                        <div class="price">
+                            <small class="">$<%= String(Number(meal.idMeal)/(1000)) %></small>
+                            <!-- <button class="btn btn-card" id="add-to-cart"><i class="fa-solid fa-plus"></i> Cart</button> -->
+                            
+                            
+                            <div class="button-container" id="add-to-cart">
+                                <div class="light-cart-button">
+                                    <button class="cart-button" onclick="this.classList.contains('active') ? this.parentNode.replaceChild(this.cloneNode(true), this) : this.classList.add('active');">
+                                        <div class="bubble">
+                                        <div class="gooey"></div>
+                                        <div class="gooey-bottom"></div>
+                                        </div>  
+                                        <div class="shopping-cart-container">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <i class="fa fa-check"></i>
+                                        </div>
+                                        <span>Add to cart</span>
+                                        <i class="fa fa-bowl-food"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% }else{ %>
+                <h2>We don't have <%= search %></h2>
+            <% } %>
+        </div>
+        <button id="show-more" class="btn">Show More</button>
+    </section>
+
+    <%- include('./partials/footer.ejs') %>
+
+
+    <script src="nav.js"></script>
+    <script src="search.js"></script>
+    <script src="addItem.js"></script>
+</body>
+</html>
