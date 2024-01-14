@@ -9,9 +9,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #383333;
+    -webkit-text-fill-color: #F5E8C7;
     transition: background-color 5000s ease-in-out 0s;
-    box-shadow: inset 0 0 100px 100px #999;
+    box-shadow: inset 0 0 100px 100px #3D0000;
 }
  
 *{
@@ -23,16 +23,16 @@ input:-webkit-autofill:active{
 body{
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    background-color: #c6c6c6;
+    background-color: #250101;
 }
 
 a {
     text-decoration: none;
-    color: #121b46;
+    color: #F5E8C7;
 }
 
 .header{
-    background-color: #fff;
+    background-color: #000;
     top: 0;
     left: 0;
     width: 100%;
@@ -42,7 +42,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px #FF0000;
 }
 
 .header .logo{
@@ -51,7 +51,7 @@ a {
 }
 
 .header .logo span{
-    color: #25ad61;
+    color: #FF0000;
 }
 
 .header .navbar{
@@ -90,12 +90,17 @@ a {
 }
 
 .header .navbar .login i:hover{
-    color: #fff;
-    background-color: #25ad61;
+    color: #F5E8C7;
+    background-color: #FF0000;
 }
 
 .header .navbar .menu a:hover{
-    border-bottom: 3px solid #25ad61;
+    border-bottom: 3px solid #FF0000;
+}
+
+.header .navbar a.logout-btn:hover{
+    border: none;
+    transform: scale(1.1);
 }
 
 .header .navbar .search-box{
@@ -133,10 +138,15 @@ a {
 .header .navbar .search-box input{
     padding: 10px 30px;
     outline: none;
-    border: 1px solid #25ad61;
+    border: 1px solid #FF0000;
+    background-color: #950101;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    color: #383333;
+    color: #F5E8C7;
+}
+
+.header .navbar .search-box input::placeholder{
+    color: #F5E8C7;
 }
 
 .header .navbar .search-box button{
@@ -149,11 +159,11 @@ a {
 
 
 header nav a.active{
-    border-bottom: 3px solid #25ad61;
+    border-bottom: 3px solid #FF0000;
 }
 
 .header .navbar .menu a.highlight{
-    border-bottom: 3px solid #25ad61;
+    border-bottom: 3px solid #FF0000;
 }
 
 .header i{
@@ -164,8 +174,8 @@ header nav a.active{
 }
 
 .header .activity i:hover{
-    color: #fff;
-    background-color: #25ad61;
+    color: #F5E8C7;
+    background-color: #950101;
 
 }
 
@@ -177,10 +187,10 @@ header nav a.active{
     outline: none;
     cursor: pointer;
     border: none;
-    background-color: #121b46;
-    border: 2px solid #121b46;
+    background-color: #950101;
+    border: 2px solid #950101;
     overflow: hidden;
-    color: #fff;
+    color: #F5E8C7;
     font-size: 15px;
     font-weight:500;
     z-index: 1;
@@ -193,7 +203,7 @@ header nav a.active{
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: #c6c6c6;
+    background-color: #FF0000;
     width: 00%;
     height: 100%;
     transition: 0.2s ease-in;
@@ -201,28 +211,28 @@ header nav a.active{
 
 .btn:hover::before{
     width: 100%;
-    color: #121b46;
+    color: #F5E8C7;
 }
 
 .btn:hover{
-    color: #121b46;
+    color: #F5E8C7;
 }
 
 .header .btn::before{
-    background-color: #fff;
+    background-color: #FF0000;
 }
 
 .btn-ghost{
     background: transparent;
-    color: #121b46;
+    color: #F5E8C7;
 }
 
 .btn.btn-ghost::before{
-    background-color: #121b46;
+    background-color: #950101;
 }
 
 .btn-ghost:hover{
-    color: #fff;
+    color: #F5E8C7;
 }
 
 .showcase .text-content{
@@ -241,21 +251,21 @@ section.showcase{
 
 .showcase h5{
     font-size: 18px;
-    color: #25ad61;
+    color: #FF0000;
     font-weight: 600;
 }
 
 .showcase h2{
     font-size: 60px;
     line-height: 1.1;
-    color: rgb(121, 115, 115);
+    color: #F5E8C7;
     margin: 10px 0;
 }
 
 .showcase p{
     margin: 30px 0;
     max-width: 600px;
-    color: #000;
+    color: #F5E8C7;
 }
 
 .showcase .btn{
@@ -315,11 +325,12 @@ section.showcase{
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
+    color: #F5E8C7;
     font-weight: 600;
 }
 
 .dishes-area h2 span, .chef-area h2 span, .reviews-area h2 span, .booking-area h2 span, .cart-area h2 span{
-    color: #25ad61;
+    color: #FF0000;
 }
 
 .dishes-area #show-more{
@@ -344,6 +355,10 @@ section.showcase{
     margin-top: 8rem;
 }
 
+.dish-cards h3, .cart-cards h3{
+    color: #F5E8C7;
+}
+
 .dishes-area.current, .chef-area.current, .reviews-area.current, .cart-area.current{
     height: auto;
     margin: 8rem 0;
@@ -354,13 +369,13 @@ section.showcase{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #3D0000;
     margin: 10px;
+    color: #F5E8C7;
     width: 250px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    border: 2px solid #25ad61;
+    box-shadow: 0 0 4px #FF0000;
     min-height: 350px;
     position: relative;
     transition: transform 0.2s ease-in;
@@ -373,17 +388,17 @@ section.showcase{
     align-items: center;
     position: relative;
     width: 200px;
+    color: #F5E8C7;
     height: 250px;
-    background-color: #fff;
+    background-color: #3D0000;
+    box-shadow: 0 0 10px #FF0000;
     border-radius: 10px;
-    border: 2px solid #25ad61;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease-in;
 }
 
 
 .cart-card:hover{
-    transform: translateY(5px);
+    transform: translateY(7px);
 }
 
 .cart-card img{
@@ -408,6 +423,7 @@ section.showcase{
     transform: translateY(-5px);
 }
 
+
 .dish-card img{
     position: absolute;
     width: 160px;
@@ -415,7 +431,7 @@ section.showcase{
     object-fit: fill;
     overflow: hidden;
     border-radius: 50%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 5px #FF0000;
     top: -25%;
 }
 
@@ -429,14 +445,15 @@ section.showcase{
 .cart-card h3{
     font-size: 100%;
     font-weight: 500;
+    margin-bottom: 2px;
 }
 
 .cart-card .remove-btn{
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #dc3333;
-    color: #fff;
+    background-color: #950101;
+    color: #F5E8C7;
     padding: 10px;
     cursor: pointer;
     border-radius: 10px;
@@ -469,11 +486,11 @@ section.showcase{
 }
 
 .dish-card small, .cart-card small{
-    border: 1px solid #25ad61;
+    border: 1px solid #F5E8C7;
     padding: 5px 10px;
     border-radius: 12px;
     font-size: 15px;
-    color: #25ad61;
+    color: #F5E8C7;
 }
 
 .cart-card small{
@@ -482,9 +499,9 @@ section.showcase{
 
 .dish-card .btn, .cart-card .btn{
     background: transparent;
-    border-color: #25ad61;
+    border-color: #F5E8C7;
     font-size: 12px;
-    color: #25ad61;
+    color: #F5E8C7;
 }
 
 
@@ -497,11 +514,11 @@ section.showcase{
 
 
 .dish-card .btn.btn-card::before, .cart-card .btn.btn-card::before{
-    background-color: #25ad61;
+    background-color: #950101;
 }
 
 .dish-card .btn:hover, .cart-card .btn:hover{
-    color: #fff;
+    color: #F5E8C7;
 }
 
 .explore-btn{
@@ -543,7 +560,7 @@ section.showcase{
     object-fit: cover;
     object-position: top;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px #FF0000;
     transition: 0.6s;
 
 }
@@ -564,7 +581,7 @@ section.showcase{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid #25ad61;
+    border: 1px solid #FF0000;
     cursor: pointer;
     transition: 0.4s;
 }
@@ -578,7 +595,7 @@ section.showcase{
 }
 
 .chef-area .chef-text{
-    color: #383333;
+    color: #F5E8C7;
     text-align: center;
     width: 80%;
     transition: 0.4s;
@@ -619,12 +636,12 @@ section.showcase{
 }
 
 .chef-text .chef-icons a{
-    color: #383333;
+    color: #F5E8C7;
     transition: color 0.2s ease-in;
 }
 
 .chef-text .chef-icons a:hover{
-    color: #121b46;
+    color: #FF0000;
 }
 
 .booking-area .booking-content{
@@ -648,15 +665,16 @@ section.showcase{
 .booking-form label{
     font-size: 15px;
     font-weight: 600;
-    color: #383333;
+    color: #F5E8C7;
     text-align: start;
-    background-color: #999;
+    background-color: #3D0000;
     padding: 10px 25px;
-    border-right: 1px solid #383333;
+    border-right: 1px solid #FF0000;
 }
 
 
 .booking-form label, .booking-form input{
+    color: #F5E8C7;
     margin: 10px 0;
 }
 
@@ -672,8 +690,8 @@ section.showcase{
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     padding: 0 10px ;
-    color: #383333;
-    background: #999;
+    color: #F5E8C7;
+    background: #3D0000;
     outline: none;
     border: none;
 }
@@ -708,14 +726,14 @@ section.showcase{
     object-fit: cover;
     border-bottom-left-radius: 40px;
     border-top-right-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px #FF0000;
 
 }
 
 .customer-card .customer-text{
     margin-left: 30px;
     max-width: 750px;
-    color: #383333;
+    color: #F5E8C7;
 }
 
 .customer-card .customer-text h3{
@@ -735,15 +753,16 @@ section.showcase{
 }
 
 .customer-card .customer-text i{
-    color: #eeee42;
+    color: #fff200;
     padding-right: 8px;
 }
 
 .footer{
     width: 100%;
     padding: 20px 11%;
-    background-color: #121b46;
-    color: #c6c6c6;
+    background-color: #000;
+    color: #F5E8C7;
+    box-shadow: 0 0 10px #FF0000;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
@@ -751,7 +770,7 @@ section.showcase{
 }
 
 .footer a{
-    color: #c6c6c6;
+    color: #F5E8C7;
     font: 15px;
     padding: 5px 0;
     transition: color 0.2s ease-in;
@@ -763,7 +782,7 @@ section.showcase{
 }
 
 .footer a:hover{
-    color: #25ad61;
+    color: #FF0000;
 }
 
 .footer .follows a:hover{
@@ -803,8 +822,8 @@ section.showcase{
   
   .cart-button {
     border-radius: 6px;
-    background: #fff;
-    color: #25ad61;
+    background: #950101;
+    color: #F5E8C7;
     font-weight: 600;
     padding: 10px 20px;
     overflow: visible;
@@ -831,7 +850,7 @@ section.showcase{
   }
   
   .cart-button i.fa-shopping-cart {
-    color: #25ad61;
+    color: #F5E8C7;
     font-size: 15px;
   }
   
@@ -840,7 +859,7 @@ section.showcase{
     top: 0; left: 0; right: 6px; bottom: 4px;
     display: flex;
     align-items: center; justify-content: center;
-    color: #fff;
+    color: #F5E8C7;
     font-size: 5px;
     transform: scale(0);
   }
@@ -854,7 +873,7 @@ section.showcase{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #25ad61;
+    color: #F5E8C7;
     z-index: 1;
     margin-right: 0;
     font-size: 1px;
@@ -873,7 +892,7 @@ section.showcase{
   }
   
   .cart-button .bubble .gooey {  
-    background: #fff;
+    /* background: #3D0000; */
     position: absolute;
     top: 32px; left: calc(50% - 5px);
     right: 0; bottom: 0;
@@ -882,7 +901,7 @@ section.showcase{
   }
   
   .cart-button .bubble .gooey-bottom {
-    background: #fff;
+    /* background: #3D0000; */
     position: absolute;
     top: 30px; left: 0;
     right: 0; bottom: 0;  
@@ -979,7 +998,7 @@ section.showcase{
   
   @keyframes tshirtOut {
     from {    
-      color: var(--background);    
+      color: #950101;    
       font-size: 1px;
       transform: translateY(0px);
     }
@@ -989,7 +1008,7 @@ section.showcase{
     }
     
     to {
-      color: var(--background);    
+      color: #F5E8C7;    
       transform: translateY(-60px);
       font-size: 21px;
       z-index: 3;
@@ -1000,17 +1019,17 @@ section.showcase{
     from {
       transform: translateY(-60px);
       font-size: 21px;
-      color: var(--background);    
+      color: #F5E8C7;    
     }
     70% {
-      color: var(--background);    
+      color: #F5E8C7;    
     }
     71% {
-      color: var(--foreground);    
+      color: #F5E8C7;    
     }
     to {
       transform: translateY(0px);
-      color: var(--foreground);    
+      color: #F5E8C7;    
       font-size: 8px;
     }
   }
@@ -1145,8 +1164,8 @@ section.showcase{
         height: 100vh;
         transform: translateX(600px);
         z-index: 100;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        background-color: #000;
+        box-shadow: 0 0 10px #FF0000;
         transition: transform 0.3s ease-in;
     }
 

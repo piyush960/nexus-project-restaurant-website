@@ -21,9 +21,19 @@
             <a id="search-btn" class=""><i class="fa-solid fa-magnifying-glass"></i></a>
             <a href=""><i class="fa-regular fa-heart"></i></a>
             <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-            <button class="btn">Login</button>
+            <% if(user){ %>
+                <a href="/logout" class="logout-btn">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
+            <% }else{ %>
+                <a href="/login">
+                    <button class="btn">Login</button>  
+                </a>
+            <% } %>
         </div>
-        <a href="#" class="login"><i class="fa-solid fa-user"></i></a>
+        <% if(user){ %>
+            <a href="/logout" class="login"><i class="fa-solid fa-right-from-bracket"></i></a>
+        <% }else{ %>
+            <a href="/login" class="login"><i class="fa-solid fa-user"></i></a>
+        <% } %>
         <a href="#" class="menu-icon open"><i class="fa-solid fa-bars"></i></a>
     </nav>
 </header>
