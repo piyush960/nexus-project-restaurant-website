@@ -5,10 +5,11 @@ const cookieParser = require('cookie-parser');
 const Cart = require('./models/cart.js');
 const authRoutes = require('./routes/authRoutes.js');
 const {requireAuth, checkUser} = require('./middleware/authUser.js');
-const PORT = process.env.PORT || 5000;
+const dotenv = require('dotenv');
+dotenv.config();
+const PORT = process.env.PORT;
 
-const MONGO_URI = "mongodb+srv://piyush:piyush123@epicurea.8ehcsxm.mongodb.net/Epicurea?retryWrites=true&w=majority";
-mongoose.connect(MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
 .then((result) => {
     console.log('connected to db')
     app.listen(PORT, () => console.log(`server listening to port ${PORT}`));
