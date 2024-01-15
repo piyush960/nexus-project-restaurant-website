@@ -1,15 +1,13 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv');
-dotenv.config();
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const Cart = require('./models/cart.js');
 const authRoutes = require('./routes/authRoutes.js');
 const {requireAuth, checkUser} = require('./middleware/authUser.js');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
-const MONGO_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@epicurea.8ehcsxm.mongodb.net/Epicurea?retryWrites=true&w=majority`;
+const MONGO_URI = "mongodb+srv://piyush:piyush123@epicurea.8ehcsxm.mongodb.net/Epicurea?retryWrites=true&w=majority";
 mongoose.connect(MONGO_URI)
 .then((result) => {
     console.log('connected to db')
@@ -29,21 +27,24 @@ app.use(authRoutes);
 
 
 app.get('/cart', requireAuth, async (req, res) => {
-    const data = await Cart.find();
+    const user_id = res.locals.user._id;
+    const data = await Cart.find({ user_id });
     res.render('cart', {title:"Cart", data});
 })
 
-app.post('/cart', async (req, res) => {
+app.post('/cart', checkUser, async (req, res) => {
 
     const price = req.body.price;
     const img = req.body.img;
     const dishName = req.body.dishName;
+    const user_id = res.locals.user._id;
+    
     let quantity = 1;
     try{
-        const result = await Cart.findOne({dishName});
+        const result = await Cart.findOne({dishName, user_id});
         if(result){
             try{
-                await Cart.findOneAndUpdate({dishName}, {quantity: result.quantity+1});
+                await Cart.findOneAndUpdate({dishName, user_id}, {quantity: result.quantity+1});
             }catch(e){
                 console.log(e);
             }
@@ -52,6 +53,7 @@ app.post('/cart', async (req, res) => {
                 dishName, 
                 img,
                 price,
+                user_id,
                 quantity
             });
             cart.save();
@@ -62,9 +64,11 @@ app.post('/cart', async (req, res) => {
     res.redirect('/dishes');
 })
 
-app.delete('/cart', (req, res) => {
+app.delete('/cart', checkUser, (req, res) => {
     const dishName = req.body.dishName;
-    Cart.findOneAndDelete({dishName})
+    const user_id = res.locals.user._id;
+
+    Cart.findOneAndDelete({dishName, user_id})
     .then(result => { 
         Cart.find()
         .then(data => {
