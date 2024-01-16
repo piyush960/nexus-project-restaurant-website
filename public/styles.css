@@ -372,6 +372,7 @@ section.showcase{
 .dishes-area.current, .chef-area.current, .reviews-area.current, .cart-area.current{
     height: auto;
     margin: 8rem 0;
+    overflow-x: hidden;
 }
 
 .dish-card{
@@ -1367,6 +1368,11 @@ section.showcase{
     .cart-button.active .shopping-cart-container{
         animation: none;
     }
+
+    .light-cart-button, .button-container{
+        flex: 0;
+    }
+
 
     .customer-card{
         display: block;
