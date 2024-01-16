@@ -359,7 +359,7 @@ main.container.sign-up-mode .sign-in{
         top: 10%;
     }
     .sign-up .home-btn{
-        top: 5%;
+        top: 3%;
     }
     
 
@@ -379,6 +379,10 @@ main.container.sign-up-mode .sign-in{
         top: 95%;
         transform: translate(-50%, -100%);
         transition: 1s 0.8s ease-in-out;
+    }
+
+    .form-container .sign-up{
+        margin-top: 20px;
     }
 
     .form-container, main.container.sign-up-mode .form-container{
