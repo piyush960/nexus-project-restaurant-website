@@ -28,7 +28,12 @@ function createToken(id){
 }
 
 const login_get = (req, res) => {
-    res.render('auth');
+    if(!res.locals.user){
+        res.render('auth');
+    }else{
+        res.redirect('/');
+    }
+    
 }
 
 const login_post = async (req, res) => {

@@ -31,8 +31,8 @@ loginForm.addEventListener('submit', async (e) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                userEmailName: userEmailName.value,
-                password: password.value
+                userEmailName: userEmailName.value.trim(),
+                password: password.value.trim()
             })
         })
 
@@ -71,9 +71,9 @@ signupForm.addEventListener('submit', (e) => {
 })
 
 async function postData(form){
-    const userName = form.userName.value;
-    const password = form.password.value;
-    const email = form.email.value;
+    const userName = form.userName.value.trim();
+    const password = form.password.value.trim();
+    const email = form.email.value.trim();
     try{
         const response = await fetch('/signup', {
             method: "POST",
@@ -99,7 +99,7 @@ async function postData(form){
         }
         else if(result.user){
             checkSuccess(form);
-            setTimeout(redirectToHome, 2000);
+            setTimeout(redirectToHome, 1000);
         }
 
     }catch(e){
