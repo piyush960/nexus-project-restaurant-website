@@ -74,37 +74,40 @@ async function postData(form){
     const userName = form.userName.value.trim();
     const password = form.password.value;
     const email = form.email.value.trim();
-    try{
-        const response = await fetch('/signup', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                userName,
-                password,
-                email
-            })
-        })
     
-        const result = await response.json();
-        console.log(result);
-        if(result.error){
-            showErrorFor(form.email, result.error.email);
-            showErrorFor(form.userName, result.error.userName);
-            showErrorFor(form.password, result.error.password);
+    if(form.password2.value !== form.password.value){
+        showErrorFor(form.password2, "password doesn't match");
+    }else{
+        try{
+            const response = await fetch('/signup', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    userName,
+                    password,
+                    email
+                })
+            })
+        
+            const result = await response.json();
+            console.log(result);
+            if(result.error){
+                showErrorFor(form.email, result.error.email);
+                showErrorFor(form.userName, result.error.userName);
+                showErrorFor(form.password, result.error.password);
+            }
+            else if(result.user){
+                checkSuccess(form);
+                setTimeout(redirectToHome, 1000);
+            }
+    
+        }catch(e){
+            console.log(e);
         }
-        if(form.password2.value !== form.password.value){
-            showErrorFor(form.password2, "password doesn't match");
-        }
-        else if(result.user){
-            checkSuccess(form);
-            setTimeout(redirectToHome, 1000);
-        }
-
-    }catch(e){
-        console.log(e);
     }
+    
 }
 
 function redirectToHome(){
