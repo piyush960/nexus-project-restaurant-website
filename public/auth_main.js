@@ -32,7 +32,7 @@ loginForm.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify({
                 userEmailName: userEmailName.value.trim(),
-                password: password.value.trim()
+                password: password.value
             })
         })
 
@@ -72,7 +72,7 @@ signupForm.addEventListener('submit', (e) => {
 
 async function postData(form){
     const userName = form.userName.value.trim();
-    const password = form.password.value.trim();
+    const password = form.password.value;
     const email = form.email.value.trim();
     try{
         const response = await fetch('/signup', {
